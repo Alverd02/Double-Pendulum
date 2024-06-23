@@ -9,4 +9,4 @@ set ylabel "Eje Y"
 set style line 1 lc rgb '#0060ad' lt 1 lw 2 pt 7 ps 1.5   # Línea azul, puntos con símbolo
 
 # Graficar datos con líneas y puntos
-plot 'data.dat' using 1:2 with linespoints linestyle 1 title 'Datos1','data.dat' using 3:4 with linespoints linestyle 1 title 'Datos2'
+plot 'data.dat' using 1:2 with linespoints linestyle 1 title 'Datos1'

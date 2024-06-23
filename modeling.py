@@ -17,8 +17,7 @@ while running:
         for line in dat:
             positions = line.split()
             screen.fill("white")
-            pygame.draw.circle(screen, "red", (float(positions[0])*100+center[0],float(positions[1])*100+center[1]), 40)
-            pygame.draw.circle(screen, "red", (float(positions[2])*100+center[0],float(positions[3])*100+center[1]), 40)
+            pygame.draw.circle(screen, "red", (float(positions[0])*10,float(positions[1])*10), 24)
             pygame.display.update()
     pygame.display.flip()
     clock.tick(60)  # limits FPS to 60

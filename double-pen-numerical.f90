@@ -4,42 +4,40 @@ IMPLICIT NONE
 
 DOUBLE PRECISION :: x1,x2,y1,y2,vy1,vy2,t0,tf,theta1_0,theta2_0,vtheta1_0,vtheta2_0
 DOUBLE PRECISION :: g,l,m
-DOUBLE PRECISION,ALLOCATABLE :: funcina(:),phi1(:),phi2(:),vphi1(:),vphi2(:)
+DOUBLE PRECISION,ALLOCATABLE :: funcina(:),phi1(:),vphi1(:)
 integer :: n,nequs,i
 COMMON/CONSTANTS/g,l,m
 
 n = 400
-nequs = 4
+nequs = 2
 
-allocate(funcina(nequs),phi1(n),phi2(n),vphi1(n),vphi2(n))
+allocate(funcina(nequs),phi1(n),vphi1(n))
 
 
 g = 9.81d0
-l = 0.2d0
-m = 1.d0
+l = 1.d0
+m = 5.d0
 
 t0 = 0.d0
 tf = 10.d0
 
-theta1_0 = 0.34906585
-theta2_0 = 0.d0
+theta1_0 = 3.1415926535898/2
 vtheta1_0 = 0.d0
-vtheta2_0 = 0.d0
 
-funcina = [theta1_0,theta2_0,vtheta1_0,vtheta2_0]
+
+funcina = [theta1_0,vtheta1_0]
 
 OPEN(11,file="data.dat")
 
-CALL integralRK4(t0,tf,n,nequs,funcina,phi1,phi2,vphi1,vphi2)
+CALL integralRK4(t0,tf,n,nequs,funcina,phi1,vphi1)
 DO i=1,n
 
 X1 = l*dsin(phi1(i))
-x2 = l*dsin(phi1(i)) + l*dsin(phi2(i))
 
 y1 = -l*dcos(phi1(i))
-y2 = -l*dcos(phi1(i)) - l*dcos(phi2(i))
 
-WRITE(11,*) x1,y1,x2,y2
+
+WRITE(11,*) x1,y1
 
 END DO
 
@@ -74,18 +72,16 @@ DOUBLE PRECISION ,DIMENSION(nequs)::funcin,dyoutput
 INTEGER :: nequs
 COMMON/CONSTANTS/g,l,m 
 
-dyoutput(1) = funcin(3)
-dyoutput(2) = funcin(4)
-dyoutput(3) =  -(2*g/l)*funcin(1) + (g/l)*funcin(2)
-dyoutput(4) =  -(g/l)*funcin(2) + (2*g/l)*funcin(1) - (g/l)*funcin(2)
+dyoutput(1) = funcin(2)
+dyoutput(2) = -(g/l)*dsin(funcin(1))
 
 END
 
-SUBROUTINE integralRK4(t0,tf, N,nequs,funcin, phi1,phi2,vphi1,vphi2)
+SUBROUTINE integralRK4(t0,tf, N,nequs,funcin, phi1,vphi1)
 IMPLICIT NONE
 DOUBLE PRECISION :: t0,tf,dt,t
 DOUBLE PRECISION,DIMENSION(nequs) :: funcin,phiRK
-DOUBLE PRECISION,DIMENSION(N) :: phi1,phi2,vphi1,vphi2
+DOUBLE PRECISION,DIMENSION(N) :: phi1,vphi1
 INTEGER :: N, nequs, i
 EXTERNAL EDO
 dt = (tf-t0)/dble(N) 
@@ -93,9 +89,7 @@ dt = (tf-t0)/dble(N)
 DO i =1,n
 t = t0 + dt*i
 phi1(i) = funcin(1)
-phi2(i) = funcin(2)
 vphi1(i) = funcin(3)
-vphi2(i) = funcin(4)
 call RungeKutta4(t,dt,funcin,phiRK,nequs,EDO)
 funcin = phiRK
 END DO
