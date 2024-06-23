@@ -11,7 +11,7 @@ COMMON/CONSTANTS/g,l,m
 n = 400
 nequs = 4
 
-allocate(funcina(nequs),phi1(nequs),phi2(nequs),vphi1(nequs),vphi2(nequs))
+allocate(funcina(nequs),phi1(n),phi2(n),vphi1(n),vphi2(n))
 
 
 g = 9.81d0
@@ -21,8 +21,8 @@ m = 1.d0
 t0 = 0.d0
 tf = 10.d0
 
-theta1_0 = 3.1415926535898/2d0
-theta2_0 = 3.1415926535898/2d0
+theta1_0 = 0.34906585
+theta2_0 = 0.d0
 vtheta1_0 = 0.d0
 vtheta2_0 = 0.d0
 
@@ -76,9 +76,8 @@ COMMON/CONSTANTS/g,l,m
 
 dyoutput(1) = funcin(3)
 dyoutput(2) = funcin(4)
-dyoutput(3) =  (-dsin(funcin(1)-funcin(2))*funcin(4)**2 - 2*dsin(funcin(1)-funcin(2))*funcin(3)**2*dcos(funcin(1)-funcin(2))&
- + (g/l)*dsin(funcin(2))*dcos(funcin(1)-funcin(2)) - (g/l)*dsin(funcin(1)))/(1-2*(dcos(funcin(1)-funcin(2)))**2)
-dyoutput(4) =  -2*dcos(funcin(1)-funcin(2))*dyoutput(3) + 2*dsin(funcin(1)-funcin(2))*funcin(3)**2-(g/l)*dsin(funcin(2))
+dyoutput(3) =  -(2*g/l)*funcin(1) + (g/l)*funcin(2)
+dyoutput(4) =  -(g/l)*funcin(2) + (2*g/l)*funcin(1) - (g/l)*funcin(2)
 
 END
 
