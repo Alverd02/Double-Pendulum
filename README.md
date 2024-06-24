@@ -1,4 +1,4 @@
-I will asume that you already have python,fortran and gnuplot(optional) properly installed.
+I will asume that you already have python, fortran and gnuplot(optional) properly installed.
 
 -How this programs work
 
