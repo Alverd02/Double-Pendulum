@@ -14,7 +14,9 @@ The double pendulum case:
 
 $$2\ddot{\theta}_1 + \sin{(\theta_1-\theta_2)}\dot{\theta}_2 + \cos{(\theta_1-\theta_2)}\ddot{\theta}_2 + \frac{2g}{l}\sin{\theta_1} = 0$$
 
-$$ \ddot{\theta}_2 - \sin{(\theta_1-\theta_2)}\dot{\theta}_1 + \cos{(\theta_1-\theta_2)\ddot{\theta}_1} + \frac{g}{l}\sin{\theta_2} = 0 $$
+$$ \ddot{\theta}_2 - \sin{(\theta_1-\theta_2)}\dot{\theta}_1 + \cos{(\theta_1-\theta_2)\ddot{\theta}_1} + \frac{g}{l}\sin{\theta_2} = 0 $$  
+
+In order to solve this problem I used the Runge-Kutta4 method, solving the equation system above
 
 ## -How this programs work
 
