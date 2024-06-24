@@ -1,10 +1,15 @@
 # Pendulums
 
+I will assume that you already have python, fortran and gnuplot(optional) properly installed.
+
 ## -Physic behind the program
 
-In the simple pendulum case, I use $\ddot{\theta} = \frac{-g}{l}sin(\theta)$
+In the simple pendulum case, I use:
 
-I will assume that you already have python, fortran and gnuplot(optional) properly installed.
+$\ddot{\theta} = \frac{-g}{l}sin(\theta)$
+
+The double pendulum case:
+
 
 ## -How this programs work
 
