@@ -20,7 +20,9 @@ In order to solve this problem I used the Runge-Kutta4 method, with the function
 
 $$ \ddot{\theta}_1 = \ddot{\theta}_1(\theta_1,\theta_2,\dot{\theta}_1,\dot{\theta}_2) $$  
 
-$$ \ddot{\theta}_2 = \ddot{\theta}_2(\theta_1,\theta_2,\dot{\theta}_1,\dot{\theta}_2) $$
+$$ \ddot{\theta}_2 = \ddot{\theta}_2(\theta_1,\theta_2,\dot{\theta}_1,\dot{\theta}_2) $$  
+
+In both systems when we obtain the solution of the differential equation we just need to change the variables to $x$ and $y$ and get the coordinates.
 
 ## -How this programs work
 
