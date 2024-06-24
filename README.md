@@ -1,4 +1,6 @@
-# -Physic behind the program
+# Pendulums
+
+## -Physic behind the program
 
 In the simple pendulum case, I use 
 
@@ -13,11 +15,11 @@ I use fortran to compute the numerical solutions for each system and then using 
 ![python_mdV9DQJ4na](https://github.com/Alverd02/Double-Pendulum/assets/118913394/4f530ea3-6d42-47b2-a34a-4b18fd6116f5)
 
 
--How to use it
+## -How to use it
 
 In each fortran file you can change the initial conditions to make your own numerical solutions, nothing more has to be changed, then run the python code and magic will be done :)
 
--More
+## -More
 
 There is a little gnuplot script to see the x,y graph. You can also change it to make your own plots or just run it.
 
