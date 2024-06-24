@@ -13,7 +13,9 @@ $$\ddot{\theta} = \frac{-g}{l}sin(\theta)$$
 The double pendulum case:
 
 $$2\ddot{\theta}_1 + \sin{(\theta_1-\theta_2)}\dot{\theta}_2 + \cos{(\theta_1-\theta_2)}\ddot{\theta}_2 + \frac{2g}{l}\sin{\theta_1} = 0$$
+
 $$ \ddot{\theta}_2 - \sin{(\theta_1-\theta_2)}\dot{\theta}_1 + \cos{(\theta_1-\theta_2)\ddot{\theta}_1} + \frac{g}{l}\sin{\theta_2} = 0 $$
+
 ## -How this programs work
 
 I use fortran to compute the numerical solutions for each system and then using python(pygame) I make the simulation.
