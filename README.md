@@ -16,7 +16,11 @@ $$2\ddot{\theta}_1 + \sin{(\theta_1-\theta_2)}\dot{\theta}_2 + \cos{(\theta_1-\t
 
 $$ \ddot{\theta}_2 - \sin{(\theta_1-\theta_2)}\dot{\theta}_1 + \cos{(\theta_1-\theta_2)\ddot{\theta}_1} + \frac{g}{l}\sin{\theta_2} = 0 $$  
 
-In order to solve this problem I used the Runge-Kutta4 method, solving the equation system above
+In order to solve this problem I used the Runge-Kutta4 method, with the functions given solving the equation system above:  
+
+$$ \ddot{\theta}_1 = \ddot{\theta}_1(\theta_1,\theta_2,\dot{\theta}_1,\dot{\theta}_2) $$  
+
+$$ \ddot{\theta}_2 = \ddot{\theta}_2(\theta_1,\theta_2,\dot{\theta}_1,\dot{\theta}_2) $$
 
 ## -How this programs work
 
