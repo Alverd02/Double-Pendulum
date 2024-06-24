@@ -25,6 +25,9 @@ There is a little gnuplot script to see the x,y graph. You can also change it to
   ![Double Graphic](https://github.com/Alverd02/Double-Pendulum/assets/118913394/31ef7529-7e89-45e4-a6e2-e9de889193b6)
 
 Also, I did a script wit the angles and its velocity with time
+
+
 ![Simple Graphic Time](https://github.com/Alverd02/Double-Pendulum/assets/118913394/6896d05d-50d5-4308-9812-3159f7c4ac84)
 
-![Simple Graphic Time](https://github.com/Alverd02/Double-Pendulum/assets/118913394/10804b68-a458-4e04-a529-bb1401993a84)
+![Simple Graphic Time](https://github.com/Alverd02/Double-Pendulum/assets/118913394/3dff4b10-7a89-4359-86f2-547302dec596)
+
