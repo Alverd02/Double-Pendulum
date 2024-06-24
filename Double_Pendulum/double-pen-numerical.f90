@@ -3,7 +3,7 @@ PROGRAM DPENDULUM
 IMPLICIT NONE
 
 DOUBLE PRECISION :: x1,x2,y1,y2,vy1,vy2,t0,tf,theta1_0,theta2_0,vtheta1_0,vtheta2_0
-DOUBLE PRECISION :: g,l,m
+DOUBLE PRECISION :: g,l,m,t
 DOUBLE PRECISION,ALLOCATABLE :: funcina(:),phi1(:),vphi1(:),phi2(:),vphi2(:)
 integer :: n,nequs,i
 COMMON/CONSTANTS/g,l,m
@@ -45,6 +45,19 @@ WRITE(11,*) x1,y1,x2,y2
 END DO
 
 CLOSE(11)
+
+OPEN(12,file="double_time.dat")
+
+CALL integralRK4(t0,tf,n,nequs,funcina,phi1,vphi1,phi2,vphi2)
+DO i=1,n
+
+t = t0 + i*tf/n
+
+WRITE(12,*) phi1(i),vphi1(i),phi2(i),vphi2(i),t
+
+END DO
+
+CLOSE(12)
 
 END PROGRAM
 
