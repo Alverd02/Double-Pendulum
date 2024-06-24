@@ -4,6 +4,11 @@ I will asume that you already have python, fortran and gnuplot(optional) properl
 
 I use fortran to compute the numerical solutions for each system and then using python(pygame) I make the simulation.
 
+![imagen](https://github.com/Alverd02/Double-Pendulum/assets/118913394/f211e489-dfd5-4738-8c65-b66b3c7b56c8)
+
+![imagen](https://github.com/Alverd02/Double-Pendulum/assets/118913394/11c5c00e-b311-415e-8916-b54c62009b3b)
+
+
 -How to use it
 
 In each fortran file you can change the initial conditions to make your own numerical solutions, nothing more has to be changed, then run the python code and magic will be done :)
