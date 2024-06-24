@@ -28,7 +28,7 @@ I use fortran to compute the numerical solutions for each system and then using 
 
 ## -How to use it
 
-In each fortran file you can change the initial conditions to make your own numerical solutions, nothing more has to be changed, then run the python code and magic will be done :)
+In each fortran file you can change the initial conditions to make your own numerical solutions, nothing more has to be changed, then run the python code and magic will be done :).
 Note that the only parameter that can change the system is the length $l$, the equations used are the ones deriven from equal masses so you can't simulate pendulums of differents masses.
 ## -More
 
