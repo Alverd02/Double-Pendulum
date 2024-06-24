@@ -27,7 +27,7 @@ vtheta1_0 = 0.d0
 
 funcina = [theta1_0,vtheta1_0]
 
-OPEN(11,file="data.dat")
+OPEN(11,file="double_data.dat")
 
 CALL integralRK4(t0,tf,n,nequs,funcina,phi1,vphi1)
 DO i=1,n

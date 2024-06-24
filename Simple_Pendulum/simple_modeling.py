@@ -17,13 +17,14 @@ while running:
             running = False
     x = []
     y = []
-    with open("data.dat") as dat:
+    with open("simple_data.dat") as dat:
         for line in dat:
             positions = line.split()
             x.append(float(positions[0]))
             y.append(float(positions[1]))  
 
     screen.fill("white")
+    pygame.draw.line(screen,"black",center,(x[index]*100+center[0],-y[index]*100+center[1]))
     pygame.draw.circle(screen, "red", (x[index]*100+center[0],-y[index]*100+center[1]), 24)
     pygame.display.flip()
 
