@@ -12,7 +12,7 @@ $$\ddot{\theta} = \frac{-g}{l}sin(\theta)$$
 
 The double pendulum case:
 
-$$2\ddot{\theta}_1 + \sin{\theta_1-\theta_2}$$
+$$2\ddot{\theta}_1 + \sin{(\theta_1-\theta_2)}\dot{\theta}_2 + \cos{(\theta_1-\theta_2)}\ddot{\theta}_2 + \frac{2g}{l}\sin{\theta_1}$$
 
 ## -How this programs work
 
