@@ -4,22 +4,36 @@ pygame.init()
 screen = pygame.display.set_mode((1500, 720))
 clock = pygame.time.Clock()
 running = True
+
 center = pygame.Vector2(screen.get_width() / 2, screen.get_height() / 2)
-print(type(center[0]))
+
+speed = 2
+frame_count = 0
+index = 0
+
 while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
-
-    # fill the screen with a color to wipe away anything from last frame
-    
+    x = []
+    y = []
     with open("data.dat") as dat:
         for line in dat:
             positions = line.split()
-            screen.fill("white")
-            pygame.draw.circle(screen, "red", (float(positions[0])*10,float(positions[1])*10), 24)
-            pygame.display.update()
+            x.append(float(positions[0]))
+            y.append(float(positions[1]))  
+
+    screen.fill("white")
+    pygame.draw.circle(screen, "red", (x[index]*100+center[0],-y[index]*100+center[1]), 24)
     pygame.display.flip()
+
+    frame_count += 1
+    if frame_count >= speed:
+        frame_count = 0
+        index += 1
+        if index >= len(x):
+            pos_index = 0
+
     clock.tick(60)  # limits FPS to 60
 
 pygame.quit()
