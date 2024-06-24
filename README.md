@@ -4,14 +4,15 @@ I will assume that you already have python, fortran and gnuplot(optional) proper
 
 ## -Physic behind the program
 
-The system(s) consist of a pendulum(s) with mass $m$ with length $l$.
-
+The system(s) consist of a pendulum(s) with mass $m$ with length $l$ using $g=9.81$.
+The equations used were obtained using lagrangian mechanics taking into account the information above.
 In the simple pendulum case, I use:
 
 $$\ddot{\theta} = \frac{-g}{l}sin(\theta)$$
 
 The double pendulum case:
 
+$$2\ddot{\theta}_1 + \sin{\theta_1-\theta_2}$$
 
 ## -How this programs work
 
