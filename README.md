@@ -2,7 +2,7 @@
 
 I will assume that you already have python, fortran and gnuplot(optional) properly installed.
 
-## -Physic behind the program
+## -Physics behind the program
 
 The system(s) consist of a pendulum(s) with mass $m$ with length $l=1.5(1)m$ using $g=9.81\frac{m}{s^2}$.
 The equations used were obtained using lagrangian mechanics taking into account the information above.  
