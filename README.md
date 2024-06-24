@@ -4,7 +4,7 @@ In the simple pendulum case, I use
 
 I will assume that you already have python, fortran and gnuplot(optional) properly installed.
 
-#-How this programs work#
+##-How this programs work##
 
 I use fortran to compute the numerical solutions for each system and then using python(pygame) I make the simulation.
 ![python_na2kb2hl0Q](https://github.com/Alverd02/Double-Pendulum/assets/118913394/efeb7794-48db-49f6-8e36-1883fd7cfbbe)
