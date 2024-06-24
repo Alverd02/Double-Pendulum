@@ -8,7 +8,7 @@ DOUBLE PRECISION,ALLOCATABLE :: funcina(:),phi1(:),vphi1(:)
 integer :: n,nequs,i
 COMMON/CONSTANTS/g,l,m
 
-n = 400
+n = 800
 nequs = 2
 
 allocate(funcina(nequs),phi1(n),vphi1(n))
@@ -19,7 +19,7 @@ l = 1.5d0
 m = 5.d0
 
 t0 = 0.d0
-tf = 10.d0
+tf = 20.d0
 
 theta1_0 = 3.1415926535898/2
 vtheta1_0 = 0.d0
