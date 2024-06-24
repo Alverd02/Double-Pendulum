@@ -6,7 +6,7 @@ I will assume that you already have python, fortran and gnuplot(optional) proper
 
 In the simple pendulum case, I use:
 
-$\ddot{\theta} = \frac{-g}{l}sin(\theta)$
+$$\ddot{\theta} = \frac{-g}{l}sin(\theta)$$
 
 The double pendulum case:
 
