@@ -36,7 +36,7 @@ while running:
         frame_count = 0
         index += 1
         if index >= len(x):
-            pos_index = 0
+            index = 0
 
     clock.tick(60)  # limits FPS to 60
 

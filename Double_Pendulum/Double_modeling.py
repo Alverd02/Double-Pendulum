@@ -44,10 +44,8 @@ while running:
         frame_count = 0
         index += 1
         if index >= len(x1):
-            pos_index = 0
+            index = 0
 
     clock.tick(60)  # limits FPS to 60
-
-print(x1[index],y1[index],x2[index],y2[index])
 
 pygame.quit()
