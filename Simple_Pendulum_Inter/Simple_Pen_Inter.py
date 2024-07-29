@@ -16,6 +16,8 @@ coor = (center[0], center[1]+100)
 
 l = 1
 omega0 = 0
+theta_0 = 0
+dt = (10/625)*1000
 
 def deriv(t, y): 
     theta, omega = y
@@ -25,15 +27,15 @@ def deriv(t, y):
 
 def motion(theta_0, l, omega0):
     y0 = [float(theta_0), omega0]
-    t_eval = np.linspace(0, 10, 250)
+    t_eval = np.linspace(0, 10, 625)
     t_span = (0,10)
     sol = solve_ivp(deriv, t_span, y0, t_eval=t_eval)
     x = (l*np.sin(sol.y[0])).tolist()
     y = (l*np.cos(sol.y[0])).tolist()
     return [x,y]
 
-speed = 2
-frame_count = 0
+x = motion(theta_0, l, omega0)[0]
+y = motion(theta_0, l, omega0)[1]
 index = 0
 
 while running:
@@ -46,34 +48,31 @@ while running:
 
     mouse_state = pygame.mouse.get_pressed(num_buttons=3)
     
-    if mouse_state[0] == True:
+    if mouse_state[0]:
         coor = pygame.mouse.get_pos()
+        x = motion(theta_0, l, omega0)[0]
+        y = motion(theta_0, l, omega0)[1]
+        index  = 0
 
     l = np.sqrt((coor[0]/100-center[0]/100)**2 + (coor[1]/100-center[1]/100)**2)
-
-    #if coor[0]<center[0]:
-    theta_0 = -np.arccos(coor[1]/(l*100))
-    #else:
-     #   theta_0 = -np.arccos(coor[1]/(l*100))
+    if coor[0]<center[0]:
+        theta_0 = -np.arccos(coor[1]/(l*100))
+    else:
+        theta_0 = np.arccos(coor[1]/(l*100))
     pygame.draw.line(screen,"black",center,(coor[0],coor[1]))
     pygame.draw.circle(screen, "red", (coor[0],coor[1]), 24)
     
 
     if not mouse_state[0]:
         screen.fill("white")
-        x = motion(theta_0, l, omega0)[0]
-        y = motion(theta_0, l, omega0)[1]
         pygame.draw.line(screen,"black",center,(x[index]*100+center[0],y[index]*100+center[1]))
         pygame.draw.circle(screen, "red", (x[index]*100+center[0],y[index]*100+center[1]), 24)
 
-        frame_count += 1
-        if frame_count >= speed:
-            frame_count = 0
-            index += 1
-            if index >= len(x):
-                index = 0
-        
-       
+    if index < len(x)-1:
+        index = index + 1
+        pygame.time.delay(int(dt))
+    else:
+        index = 0
     pygame.display.flip()
     clock.tick(60)  # limits FPS to 60
 pygame.quit()

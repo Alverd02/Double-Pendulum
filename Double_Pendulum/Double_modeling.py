@@ -10,10 +10,8 @@ running = True
 
 center = pygame.Vector2(screen.get_width() / 2, screen.get_height() / 2)
 
-speed = 2
-frame_count = 0
 index = 0
-
+dt = (20/800)*1000
 while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -39,13 +37,11 @@ while running:
 
     pygame.display.flip()
 
-    frame_count += 1
-    if frame_count >= speed:
-        frame_count = 0
-        index += 1
-        if index >= len(x1):
-            index = 0
-
+    if index < len(x1)-1:
+        index = index + 1
+        pygame.time.delay(int(dt))
+    else:
+        index = 0
     clock.tick(60)  # limits FPS to 60
 
 pygame.quit()
