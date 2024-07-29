@@ -52,7 +52,7 @@ while running:
     l = np.sqrt((coor[0]/100-center[0]/100)**2 + (coor[1]/100-center[1]/100)**2)
 
     #if coor[0]<center[0]:
-    theta_0 = np.arccos(coor[1]/(l*100))
+    theta_0 = -np.arccos(coor[1]/(l*100))
     #else:
      #   theta_0 = -np.arccos(coor[1]/(l*100))
     pygame.draw.line(screen,"black",center,(coor[0],coor[1]))

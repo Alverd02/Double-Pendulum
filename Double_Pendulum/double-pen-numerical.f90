@@ -83,18 +83,22 @@ END
 SUBROUTINE EDO(nequs, t, funcin, dyoutput)
 IMPLICIT NONE
 
-DOUBLE PRECISION :: t,g,l,m
+DOUBLE PRECISION :: t,g,l,m,denom,delta_theta
 DOUBLE PRECISION ,DIMENSION(nequs)::funcin,dyoutput
 INTEGER :: nequs
 COMMON/CONSTANTS/g,l,m 
 
+
+delta_theta = funcin(1) - funcin(3)
+denom = 2.0 - cos(delta_theta)**2
+
 dyoutput(1) = funcin(2)
+dyoutput(2) = (-g * (2.0 * sin(funcin(1)) - sin(funcin(3)) * cos(delta_theta)) &
+- sin(delta_theta) * (funcin(4)**2 + 2.0 * funcin(2)**2 * cos(delta_theta))) / (l * denom)
 dyoutput(3) = funcin(4)
-dyoutput(2) = (-2*dsin(funcin(1)-funcin(3)) - dcos(funcin(1)-funcin(3))*dsin(funcin(1)-funcin(3))*funcin(2)**2 +&
-dcos(funcin(1)-funcin(3))*(g/l)*dsin(funcin(3)) -(2*g/l)*dsin(funcin(1)))/(2.d0-dcos(funcin(1)-funcin(3))**2)
-dyoutput(4) = dsin(funcin(1)-funcin(3))*funcin(2)**2 -(g/l)*dsin(funcin(3)) + (-2*dsin(funcin(1)-funcin(3)) - &
-dcos(funcin(1)-funcin(3))*dsin(funcin(1)-funcin(3))*funcin(2)**2 + dcos(funcin(1)-funcin(3))*(g/l)*dsin(funcin(3))&
--(2*g/l)*dsin(funcin(1)))/(2.d0-dcos(funcin(1)-funcin(3))**2)
+dyoutput(4) = (2.0 * sin(delta_theta) * (funcin(2)**2 * cos(delta_theta) + g * cos(funcin(1))) &
+- 2.0 * g * sin(funcin(3))) / (l * denom)
+
 END
 
 SUBROUTINE integralRK4(t0,tf, N,nequs,funcin, phi1,vphi1,phi2,vphi2)
