@@ -50,20 +50,21 @@ while running:
     
     if mouse_state[0]:
         coor = pygame.mouse.get_pos()
+        index  = 0
+        l = np.sqrt((coor[0]/100-center[0]/100)**2 + (coor[1]/100-center[1]/100)**2)
+        if coor[0]<center[0]:
+            theta_0 = -np.arccos(coor[1]/(l*100))
+        else:
+            theta_0 = np.arccos(coor[1]/(l*100))
         x = motion(theta_0, l, omega0)[0]
         y = motion(theta_0, l, omega0)[1]
-        index  = 0
-
-    l = np.sqrt((coor[0]/100-center[0]/100)**2 + (coor[1]/100-center[1]/100)**2)
-    if coor[0]<center[0]:
-        theta_0 = -np.arccos(coor[1]/(l*100))
-    else:
-        theta_0 = np.arccos(coor[1]/(l*100))
+        
     pygame.draw.line(screen,"black",center,(coor[0],coor[1]))
     pygame.draw.circle(screen, "red", (coor[0],coor[1]), 24)
     
 
     if not mouse_state[0]:
+
         screen.fill("white")
         pygame.draw.line(screen,"black",center,(x[index]*100+center[0],y[index]*100+center[1]))
         pygame.draw.circle(screen, "red", (x[index]*100+center[0],y[index]*100+center[1]), 24)
