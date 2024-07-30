@@ -52,4 +52,7 @@ Also, I did a script wit the angles and its velocity with time
 
 ![Screenshot 2024-07-30 001852](https://github.com/user-attachments/assets/3bedcf87-7831-4bf1-a4fb-b38d86202f76)
 
+## Update
+
+I wanted to do something to make the initial condition changing easier. I made an interactive app in which you can change the angle with the mouse cursor in both systems.
 
