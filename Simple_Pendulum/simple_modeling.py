@@ -13,6 +13,7 @@ center = pygame.Vector2(screen.get_width() / 2, screen.get_height() / 2)
 
 index = 0
 dt = (20/800)*1000
+
 while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:

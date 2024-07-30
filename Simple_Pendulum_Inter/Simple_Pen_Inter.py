@@ -27,7 +27,7 @@ def deriv(t, y):
 
 def motion(theta_0, l, omega0):
     y0 = [float(theta_0), omega0]
-    t_eval = np.linspace(0, 10, 625)
+    t_eval = np.linspace(0, 10,625)
     t_span = (0,10)
     sol = solve_ivp(deriv, t_span, y0, t_eval=t_eval)
     x = (l*np.sin(sol.y[0])).tolist()
@@ -68,6 +68,12 @@ while running:
         screen.fill("white")
         pygame.draw.line(screen,"black",center,(x[index]*100+center[0],y[index]*100+center[1]))
         pygame.draw.circle(screen, "red", (x[index]*100+center[0],y[index]*100+center[1]), 24)
+
+    font = pygame.font.Font(None, 36)
+    time = f"Time = {0 + index*dt/1000}"
+    text_surface = font.render(str(time), True, (0, 0, 0))
+    text_rect = text_surface.get_rect(center=(320, 240))
+    screen.blit(text_surface, text_rect) 
 
     if index < len(x)-1:
         index = index + 1
