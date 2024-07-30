@@ -28,9 +28,9 @@ In both systems when we obtain the solution of the differential equation we just
 
 I use fortran to compute the numerical solutions for each system and then using python(pygame) I make the simulation.
 
-![python_na2kb2hl0Q](https://github.com/Alverd02/Double-Pendulum/assets/118913394/efeb7794-48db-49f6-8e36-1883fd7cfbbe)
+![python_2P9mdJ7yYm](https://github.com/user-attachments/assets/4bc179a5-cab7-47a7-8f1a-660494fce2aa)
 
-![python_enLKg5DHu1](https://github.com/user-attachments/assets/55266aad-1b73-49bc-9956-94bae58355fc)
+![python_Mqj3ajrU87](https://github.com/user-attachments/assets/5ec89c34-38d1-4ec1-9ceb-378ef6cbd26e)
 
 
 ## -How to use it
