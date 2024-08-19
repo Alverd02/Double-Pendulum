@@ -54,5 +54,5 @@ Also, I did a script wit the angles and its velocity with time
 
 ## Update
 
-I wanted to do something to make the initial condition changing easier. I made an interactive app in which you can change the angle with the mouse cursor in both systems.
+I wanted to do something to make the initial condition changing easier. I made an interactive app in which you can change the angle with the mouse cursor in both systems. The double pendulum has some errors and it's not quite what I wanted but it works somehow.
 
