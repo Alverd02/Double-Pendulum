@@ -4,7 +4,7 @@ import pygame
 import os
 import matplotlib.pyplot as plt
 
-os. chdir("D:\GitHubRepos\Double Pendulum\Double_Pendulum_Inter")
+os. chdir("C:\GitHubRepos\Double-Pendulum\Double_Pendulum_Inter")
 
 
 pygame.init()
