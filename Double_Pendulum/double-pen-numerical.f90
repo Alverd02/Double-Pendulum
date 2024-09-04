@@ -15,7 +15,7 @@ allocate(funcina(nequs),phi1(n),vphi1(n),phi2(n),vphi2(n))
 
 
 g = 9.81d0
-l = 1d0
+l = 1.5d0
 m = 5.d0
 
 t0 = 0.d0
