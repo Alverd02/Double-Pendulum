@@ -1,7 +1,10 @@
 import pygame
 import os
 
+<<<<<<< Updated upstream
 os. chdir("C:\GitHubRepos\Double-Pendulum\Double_Pendulum")
+=======
+>>>>>>> Stashed changes
 
 pygame.init()
 screen = pygame.display.set_mode((1500, 720))
