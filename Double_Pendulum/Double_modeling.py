@@ -1,7 +1,7 @@
 import pygame
 import os
 
-os. chdir("D:\GitHubRepos\Double Pendulum\Double_Pendulum")
+os. chdir("C:\GitHubRepos\Double-Pendulum\Double_Pendulum")
 
 pygame.init()
 screen = pygame.display.set_mode((1500, 720))

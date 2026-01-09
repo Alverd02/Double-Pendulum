@@ -4,8 +4,6 @@ import pygame
 import os
 import matplotlib.pyplot as plt
 
-os. chdir("D:\GitHubRepos\Double Pendulum\Simple_Pendulum_Inter")
-
 pygame.init()
 screen = pygame.display.set_mode((1500, 720))
 clock = pygame.time.Clock()
